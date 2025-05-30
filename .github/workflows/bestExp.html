@@ -1,11 +1,35 @@
 <html>
+<script>
+    function enterPasscode(){
+        const passcode = "PASSCODE"
+        let passattempt = prompt("Enter Passcode: ", "null")
+        if (passattempt === passcode){
+            let cell1ans = prompt("Enter Table Data: ", "null")
+            let cell2ans = prompt("Enter table data: ", "null")
+            AddTableRow(cell1ans, cell2ans)
+        }
+
+    }
+    function AddTableRow(data1, data2) {
+        var table = document.getElementById("mainTable");
+        var row = table.insertRow(-1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        cell1.innerHTML = data1
+        cell2.innerHTML = data2
+        cell1.className = "top mediumhoverbox"
+        cell2.className = "top mediumhoverbox"
+    }
+</script>
+
 <style>
-    
 </style>
-<nav class="navbar" style="color:grey"><link rel="stylesheet" href="styles.css"></a>
+
+<nav class="navbar" style="border:10px double rgba(255, 157, 0, 0.447);"><link rel="stylesheet" href="styles.css"></a>
     <a href="main.html" class="navbar">Main Page</a> 
     <a href="goodExp.html" class="navbar">Good</a>
     <a href="betterExp.html" class="navbar">Better</a>
+    <a href="bestExp.html" class="navbar">Best</a>
 </nav>
 
 
@@ -16,21 +40,21 @@
 
 <body>
 <div>
-    <table class="panel">
+    <table id="mainTable" class="panel">
         <tr>
-            <th class="top">title 1</th>
-            <th class="top">title 2</th>
-            <th class="top">title 3</th>
+            <th class="top"><p id="title1">title 1</p></th>
+            <th class="top"><p id="title2">title 2</p></th>
         </tr>
         <tr>
-            <td class="top mediumhoverbox"><div>dataoverflowaaaaaaaaaaaaaaaaaaaaaaaaa</div></td>
-            <td class="top mediumhoverbox">data</td>
+            <td class="top mediumhoverbox">dataoverflowaaaaaaaaaaaaaaaaaaaaaaaaa</td>
             <td class="top mediumhoverbox">data</td>
         </tr>
         <tr>
-            <td class="mediumhoverbox">data</td>
+            <td class="top mediumhoverbox">data</td>
+            <td class ="top mediumhoverbox">data</td>
         </tr>
-        </table>
+    <button class="feature" type="input" onclick="enterPasscode()">Click to Add Row</button>
+    </table>
 </div>
 </body>
 </html>

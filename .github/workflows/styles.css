@@ -12,20 +12,6 @@ Please do NOT remove this credit, unless your coding becomes unrecognizable from
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat&effect=fire');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&effect=fire');
-@keyframes cardglowsun {
-	0% {background:#d03454}
-	10% {background:linear-gradient(rgb(215, 71, 84),rgb(208, 52, 84))}
-	15% {background:linear-gradient(rgb(220, 76, 84),rgb(208, 52, 84))}
-	20% {background:linear-gradient(rgb(225, 81, 83),rgb(208, 52, 84))}
-	30% {background:linear-gradient(rgb(235, 91, 82),rgb(208, 52, 84))}
-	40% {background:linear-gradient(rgb(245, 101, 81),rgb(208, 52, 84))}
-	50% {background:linear-gradient(rgb(255, 111, 80),rgb(208, 52, 84));}
-	60% {background:linear-gradient(rgba(255, 121.2, 76.7),rgb(255, 111, 80),rgb(208, 52, 84));}
-	70% {background:linear-gradient(rgba(255, 151.4, 72.4),rgb(255, 111, 80),rgb(208, 52, 84));}
-	80% {background:linear-gradient(rgba(255, 171.6, 68.1),rgb(255, 111, 80),rgb(208, 52, 84));}
-	90% {background:linear-gradient(rgba(255, 191.8, 63),rgb(255, 111, 80),rgb(208, 52, 84));}
-	100% {background:linear-gradient(rgb(255, 202, 62),#ff6f50, #d03454);}
-}
 @keyframes clip-path-reveal-1 {
   0%, 25% { clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%); }
   50% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
@@ -40,7 +26,8 @@ Please do NOT remove this credit, unless your coding becomes unrecognizable from
 
 body {
 
-    background-image: url("https://www.dropbox.com/scl/fi/kubh4zd4jysc2l6jmpc3d/image.jpg?rlkey=891vj1f07snmnin6hcx8ltnem&st=ithe0qew&dl=1");
+    background-image: url("https://www.dropbox.com/scl/fi/kubh4zd4jysc2l6jmpc3d/image.jpg?rlkey=891vj1f07snmnin6hcx8ltnem&st=ithe0qew&dl=1") !important;
+	background-color:#b87e51;
 	background-size: 100%;
     background-repeat: none;
     background-attachment: fixed;
@@ -63,12 +50,6 @@ body {
     border-style: double;
 }
 
-/* LEFT SIDE */
-.col-md-9 {
-	background: none;
-    border-right: none
-}
-
 /* TOPBAR ("Welcome back, ___") */
 
 .topbar {
@@ -84,96 +65,36 @@ body {
 .navbar {
 	background: rgb(73, 26, 0);
     padding: 15px;
-	border-bottom: 2px double rgb(81,19,19);
+	border-radius: 30px;
 	color: #000000;
-}
+	justify-content:center;
 
+} 
 
 .navbar li a {
-	color: #000000 !important
-}
-
-
-.navbar li a:hover {
-	background: rgba(63,28,2,0.68) !important;
-	border-bottom: none;
-	color: #000000 !important;
+	list-style-type: none !important;
 
 }
 
-/* BREADCRUMB (Home / Den) */
+.navbar a:active {
+	background:rgba(161, 0, 0, 0.5) !important;
+	border:10px double rgba(255, 157, 0, 0.447);
 
-.breadcrumb {
-	background: rgba(76,33,0,0.5) !important;
-    border: none;
-	border-radius: 30px
 }
 
-/* BREADCRUMB TEXT */
 
-.breadcrumb .active {
-	color: #000000
+
+.navbar a:hover {
+	border: 5px double #a44d09;
+	border-bottom: 10px double #ff6f50;
+	border-top: 10px double #ff6f50;
+	background: #2f1902;
+
+
 }
 
-/* CSS CREDIT */
 
-.breadcrumb::after {
-        content: "Template by Katie (#106445)";
-        color: #000000;
-        position: absolute;
-        right: 13%; /* (This may need adjusting) */
-        z-index: 100
-    }
-
-@media only screen and (max-width: 1199px) and (min-width: 992px)  {
-        .breadcrumb::after {
-            right: 20%
-        }
-    }
-
-    @media only screen and (max-width: 991px) and (min-width: 768px)  {
-        .breadcrumb::after {
-            right: 20%
-        }
-    }
-
-    @media only screen and (max-width: 767px) {
-        .breadcrumb::after {
-            right: 22%
-        }
-    }
-
-/* BOOKMARK BUTTON */
-
-input.floatright, input.floatright:hover {
-	background: rgba(0,0,0,0.5) !important;
-        border: none !important;
-	border-radius: 0px;
-	color: #000000 !important;    
-}
-
-/* SWITCH ACCOUNT BUTTON */
-
-button.button, button.button:hover {
-	background: rgba(1, 1, 1, 0.5);
-        border: none !important;
-	border-radius: 0px;
-        text-shadow: none !important;
-	color: #000000 !important
-}
-
-/* ALERTS (ie. "Your lionesses have returned from hunting!") */
-
-.alert,
-.alert-warning,
-.alert-danger {
-	background: rgba(22,8,0,0.5) !important;
-	border: 10px double #ffedc1;
-	color: #ffebc1;
-	border-radius: 10px
-}
-
-/* BIGGEST HEADER ("___"'s DEN) */
+/* BIGGEST HEADER */
 
 
 
@@ -219,14 +140,6 @@ h3 {
 	font-size: 14px !important
 }
 
-/* RIGHT SIDE PANEL HEADER */
-
-.sidebar h3 {
-	color: #ffffff !important;
-        font-size: 26px !important;
-        font-family: 'FONT NAME'
-
-}
 
 /* RIGHT SIDE PANELS */
 .panel {
@@ -264,9 +177,7 @@ h3 {
 	border-radius: 50px 50px 0px 0px;
     text-align: center !important
 }
-.top > small {
-    text-align: center !important
-}
+
 .bottom,
 th {
 	background:rgba(49,23,3) !important;
@@ -274,62 +185,17 @@ th {
 	border-radius: 0px 0px 50px 50px
 }
 
-td.bottom a {
-        text-decoration: none !important
-}
 
-/* Color behind "Level, Stats, Branch, Territory" etc. */
-
-.inner-table .left {
-	background: rgba(242,200,155,0.7) !important;
-    color: #2e2a2b;
-	border-radius: 20px 0px 0px 20px !important
-}
-
-
-/* Color behind the number of all of the things above */
-
-.inner-table .right {
-	border-radius: 0px 15px 15px 0px !important;
-    background: rgb(247,205,160);
-    color: #000
-} .inner-table .right a:link {
-    text-shadow: 0px 0px 2px #a44d09 !important
-    
-}
-
-td.right {
-	border-radius: 0px !important;
-	background: #fff
-}
-
-
-/* Affects the color behind "_ Unsorted", "_ Pregnant Lionesses", "View Pride Overview", and cave/mound names */
-
-.cave-grid,
-.mound-grid {
-	background: rgba(1, 1, 1, 0.5);
-    border: none !important;
-	border-radius: 10px !important
-}
-
-/* FEED ALL, PLAY ALL */
+/* Add row button */
 
 .feature {
 	background: rgba(1, 1, 1, 0.5) !important;
-	color: #000000 !important;
+	color: #ffffff !important;
 	border: 1px solid #000000 !important;
-	border-radius: 0px !important
+	position: static;
+	border-radius: 20px !important
 }
 
-/* "King Dynasty, Pride Dynasty, Achievements, Showcase" Panels */
-
-.feature,
-div.left {
-	background: rgba(1, 1, 1, 0.5);
-	border: none;
-	border-radius: 0px !important
-}
 
 /* Block of color behind "Territory Description, Player Name, Avatar URL" etc. */
 
@@ -564,20 +430,3 @@ a[href$="unsorted.php?id=PLAYER ID"]>div.cave-grid>img /* Unsorted */ {
 }
 
 
-/* MAKES BOXES/DESCRIPTION SHOW ON MOBILE */
-
-@media only screen and (max-width: 767px) {
-        .container.main .hidden-xs {
-            display: block !important;
-        }
-}
-
-@media only screen and (max-width: 991px) and (min-width: 768px) {
-	display: block !important;
-}
-
-@media only screen and (min-width: 1200px) {
-		div.quote {
-			width: 790px;
-		}
-	}
