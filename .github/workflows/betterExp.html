@@ -1,4 +1,49 @@
 <html>
+
+<script>
+     window.onload = function () {
+        const savedRows = JSON.parse(localStorage.getItem("savedTableRows")) || [];
+        for (const row of savedRows) {
+            AddTableRow(row[0], row[1], row[2], row[3]);
+        }
+    };
+
+    function enterPasscode(){
+        const passcode = "PASSCODE"
+        let passattempt = prompt("Enter Passcode: ", "null")
+        if (passattempt === passcode){
+            let cell1ans = prompt("Enter FRQ Name: ", "null")
+            let cell2ans = prompt("Enter Video Link: ", "null")
+            let cell3ans = prompt("Enter Creators: ", "null")
+            let cell4ans = prompt("Enter Rating: ", "null")
+            AddTableRow(cell1ans, cell2ans, cell3ans, cell4ans)
+        }
+
+    }
+    function AddTableRow(data1, data2, data3, data4) {
+        var table = document.getElementById("mainTable");
+        var row = table.insertRow(-1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+
+        cell1.innerHTML = data1
+        cell2.innerHTML = data2
+        cell3.innerHTML = data3
+        cell4.innerHTML = data4
+        cell1.className = "top mediumhoverbox"
+        cell2.className = "top mediumhoverbox"
+        cell3.className = "top mediumhoverbox"
+        cell4.className = "top mediumhoverbox"
+    }
+
+     function saveRowToLocalStorage(data1, data2, data3, data4) {
+        const savedRows = JSON.parse(localStorage.getItem("savedTableRows")) || [];
+        savedRows.push([data1, data2, data3, data4]);
+        localStorage.setItem("savedTableRows", JSON.stringify(savedRows));
+    }
+</script>
 <style>
     
 </style>
@@ -9,29 +54,36 @@
     <a href="bestExp.html" class="navbar">Best</a>
 </nav>
 
-<head>
 
-<h1>Better Experiments</h1>
-<h2>filler</h2>
-</head>
 
 <body>
-<div>
-    <table class="panel">
-        <tr>
-            <th class="top">title 1</th>
-            <th class="top">title 2</th>
-            <th class="top">title 3</th>
-        </tr>
-        <tr>
-            <td class="top mediumhoverbox"><div>dataoverflowaaaaaaaaaaaaaaaaaaaaaaaaa</div></td>
-            <td class="top mediumhoverbox">data</td>
-            <td class="top mediumhoverbox">data</td>
-        </tr>
-        <tr>
-            <td class="mediumhoverbox">data</td>
-        </tr>
+    <head>
+        <h1>Better Experiments</h1>
+        <h2>filler</h2>
+    </head>
+    
+    <div>
+        <table id="mainTable" class="panel">
+            <tr>
+                <th class="top"><p id="title1">FRQ Name</p></th>
+                <th class="top"><p id="title2">Video Link</p></th>
+                <th class="top"><p id="title3">Made By</p></th>
+                <th class="top"><p id="title4">Rating</p></th>
+            </tr>
+            <tr>
+                <td class="top mediumhoverbox">dataoverflowaaaaaaaaaaaaaaaaaaaaaaaaa</td>
+                <td class="top mediumhoverbox">data</td>
+                <td class="top mediumhoverbox">data</td>
+                <td class="top mediumhoverbox">data</td>
+            </tr>
+            <tr>
+                <td class="top mediumhoverbox">data</td>
+                <td class="top mediumhoverbox">data</td>
+                <td class="top mediumhoverbox">data</td>
+                <td class="top mediumhoverbox">data</td>
+            </tr>
         </table>
-</div>
+        <button class="feature" type="input" onclick="enterPasscode()">Click to Add Row</button>
+    </div>
 </body>
 </html>
