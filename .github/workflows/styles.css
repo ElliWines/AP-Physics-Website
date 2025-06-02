@@ -278,7 +278,7 @@ a:hover {
 .mediumbox {
 
 	background: rgba(1, 1, 1, 0.5);
-	color: #000000;
+	color: #ffffff;
 	padding: 10px;
 	border: none;
 	border-radius: 0px;
@@ -291,10 +291,10 @@ a:hover {
 .largebox {
 	float: left;
 	background: rgba(1, 1, 1, 0.5);
-	color: #000000;
+	color: #ffffff;
 	padding: 10px;
 	border: none;
-	border-radius: 0px;
+	border-radius: 30px;
 	margin: 10px;
 	height: 150px;
 	width: 90%;
