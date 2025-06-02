@@ -1,12 +1,4 @@
 
-/*
-copy by That One Dragon Girl
-Free to use CSS template by Katie (#106445).
-This code may be altered, edited, or re-uploaded. 
-This template may be used to create paid codes (pre-mades and commissions).
-Please do NOT remove this credit, unless your coding becomes unrecognizable from this one! 
-*/
-
 /* FONT (From Google Fonts) */
 
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
@@ -50,17 +42,8 @@ body {
     border-style: double;
 }
 
-/* TOPBAR ("Welcome back, ___") */
 
-.topbar {
-	background: rgba(81,20,37,0.5);
-	border: none;
-	border-top: none;
-	color: #ffebc1;
-	border-radius: 0px 0px 20px 20px;
-}
-
-/* NAVBAR (Den/Crossroads/Etc.) */
+/* NAVBAR */
 
 .navbar {
 	background: rgb(73, 26, 0);
@@ -83,21 +66,15 @@ body {
 }
 
 
-
 .navbar a:hover {
 	border: 5px double #a44d09;
 	border-bottom: 10px double #ff6f50;
 	border-top: 10px double #ff6f50;
 	background: #2f1902;
-
-
 }
 
 
 /* BIGGEST HEADER */
-
-
-
 
 h1 {
      background-image: linear-gradient(-220deg,
@@ -141,7 +118,7 @@ h3 {
 }
 
 
-/* RIGHT SIDE PANELS */
+/* Table Panel */
 .panel {
 	background: rgba(92,33,0, 0.5) !important;
 	box-shadow: none !important;
@@ -156,18 +133,12 @@ h3 {
 }
  
 
-/* PANEL BACKGROUND COLOR */
-
-.table {
-	background: rgba(10,1,1,0.5);
-    color: #ffebc1;
-	border: none !important;
-	border-collapse: separate;
-	border-radius: 40px
-}
 
 
-/* HEADERS COLOR (King Name + Title, "There are _ lions with mutations in _'s pride.") */
+
+
+
+/* HEADERS COLOR */
 
 
 
@@ -197,46 +168,7 @@ th {
 }
 
 
-/* Block of color behind "Territory Description, Player Name, Avatar URL" etc. */
-
-.table .left {
-	background: rgba(1, 1, 1, 0.5);
-    border-radius: 0px
-
-}
-
-/* Color behind the content of the elements listed above */
-
-input,
-select,
-textarea {
-	background: rgba(1, 1, 1, 0.5) !important;
-	border: none !important;
-	border-radius: 0px !important;
-	color: #000000 !important;
-	box-shadow: none !important;
-	text-shadow: none !important
-}
-
-
-/* ACCOUNT OPTIONS ON/OFF TOGGLE SWITCH */
-
-div.slider.round /* Background */ {
-	background: #000000 !important
-}
-
-div.slider.round::before /* Circle Part */ {
-	background: #000000 !important
-}
-
-/* Copyright, Terms of Service, CoC, etc. */
-
-div.container.footer.center.white.visible-lg.visible-md.visible-sm, div.container.footer.center.white.visible-lg.visible-md.visible-sm a {
-    color: #000000 !important;
-    text-shadow: none !important
-}
-
-/* LINK COLOR */
+/* Link color */
 
 a:link,
 a:visited {
@@ -248,16 +180,6 @@ a:visited {
 a:hover {
 	color: #ffffff !important;
     text-shadow: 0 0 1px #ffffff, 0 0 4px #ffc481, 0 0 15px rgb(255,141,172);
-}
-
-/* BOX CONTAINER */
-
-.boxcontainer {
-	background: #fff;
-	height: auto;
-	padding: 0px;
-	justify-content: center;
-	display: flex
 }
 
 /* BOXES */
