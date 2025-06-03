@@ -92,7 +92,7 @@ h1 {
     background-clip: border-box;
     background-size: 200% auto;
     background-clip: text;
-    -webkit-background:rgba(217,4,4,0);
+    -webkit-background:rgba(217,4,4,0) !important;
     animation: textclip 4s linear infinite;
     animation-delay: 5s;
     writing-mode: text-justify;
