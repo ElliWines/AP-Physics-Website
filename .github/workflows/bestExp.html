@@ -19,7 +19,7 @@
         }
 
     }
-    
+
     function AddTableRow(data1, data2, data3, data4) {
         var table = document.getElementById("mainTable");
         var row = table.insertRow(-1);
@@ -39,7 +39,7 @@
         saveRowToLocalStorage(data1, data2, data3, data4)
     }
 
-     function saveRowToLocalStorage(data1, data2, data3, data4) {
+    function saveRowToLocalStorage(data1, data2, data3, data4) {
         const savedRows = JSON.parse(localStorage.getItem("savedTableRows")) || [];
         savedRows.push([data1, data2, data3, data4]);
         localStorage.setItem("savedTableRows", JSON.stringify(savedRows));
