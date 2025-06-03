@@ -9,8 +9,7 @@
         this.rating = rating;
     }
     //list of videos
-    const videos = [];
-    localStorage.setItem("Videos", videos)
+    //localStorage.setItem("Videos", videos)
      window.onload = function () {
         const savedRows = JSON.parse(localStorage.getItem("savedTableRows")) || [];
         for (const row of savedRows) {
@@ -28,7 +27,13 @@
             let cell4ans = prompt("Enter Rating: ", "null")
 
             AddTableRow(cell1ans, cell2ans, cell3ans, cell4ans)
-            videos.push(  new vid(cell1ans, cell2ans, cell3ans, cell4ans) );
+            try {
+                videos.push(  new vid(cell1ans, cell2ans, cell3ans, cell4ans) );
+            }
+            catch (e) {
+                const videos = [];
+                videos.push(  new vid(cell1ans, cell2ans, cell3ans, cell4ans) );
+            }
             localStorage.setItem("Videos", videos)
         }
 
@@ -56,11 +61,6 @@
         savedRows.push([data1, data2, data3, data4]);
         localStorage.setItem("savedTableRows", JSON.stringify(savedRows));
     }
-    for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i);
-    const value = localStorage.getItem(key);
-    console.log(`${key}: ${value}`);
-}
 </script>
 <style>
     
