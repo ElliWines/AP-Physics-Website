@@ -1,66 +1,71 @@
 <html>
 
 <script>
-    //object for creating videos
-    function vid(name, link, creators, rating) {
-        this.name = name;
-        this.link = link;
-        this.creators = creators;
-        this.rating = rating;
+    let videos = [];
+
+if (localStorage.getItem("Videos") !== null) {
+    videos = JSON.parse(localStorage.getItem("Videos"));
+    console.log('exists');
+} else {
+    videos = [];
+    console.log('DNE');
+}
+
+function vid(name, link, creators, rating) {
+    this.name = name;
+    this.link = link;
+    this.creators = creators;
+    this.rating = rating;
+}
+
+window.onload = function () {
+    const savedRows = JSON.parse(localStorage.getItem("savedTableRows")) || [];
+    for (const row of savedRows) {
+        AddTableRow(row[0], row[1], row[2], row[3]);
     }
-    //list of videos
-    //localStorage.setItem("Videos", videos)
-     window.onload = function () {
-        const savedRows = JSON.parse(localStorage.getItem("savedTableRows")) || [];
-        for (const row of savedRows) {
-            AddTableRow(row[0], row[1], row[2], row[3]);
-        }
-    };
+};
 
-    function enterPasscode(){
-        const passcode = "PASSCODE"
-        let passattempt = prompt("Enter Passcode: ", "null")
-        if (passattempt === passcode){
-            let cell1ans = prompt("Enter FRQ Name: ", "null")
-            let cell2ans = prompt("Enter Video Link: ", "null")
-            let cell3ans = prompt("Enter Creators: ", "null")
-            let cell4ans = prompt("Enter Rating: ", "null")
+function enterPasscode() {
+    const passcode = "PASSCODE";
+    let passattempt = prompt("Enter Passcode: ", "null");
+    if (passattempt === passcode) {
+        let cell1ans = prompt("Enter FRQ Name: ", "null");
+        let cell2ans = prompt("Enter Video Link: ", "null");
+        let cell3ans = prompt("Enter Creators: ", "null");
+        let cell4ans = prompt("Enter Rating: ", "null");
 
-            AddTableRow(cell1ans, cell2ans, cell3ans, cell4ans)
-            try {
-                videos.push(  new vid(cell1ans, cell2ans, cell3ans, cell4ans) );
-            }
-            catch (e) {
-                const videos = [];
-                videos.push(  new vid(cell1ans, cell2ans, cell3ans, cell4ans) );
-            }
-            localStorage.setItem("Videos", videos)
-        }
+        AddTableRow(cell1ans, cell2ans, cell3ans, cell4ans);
+        saveRowToLocalStorage(cell1ans, cell2ans, cell3ans, cell4ans);
 
+        const newVid = new vid(cell1ans, cell2ans, cell3ans, cell4ans);
+        videos.push(newVid);
+        localStorage.setItem("Videos", JSON.stringify(videos));
     }
-    function AddTableRow(data1, data2, data3, data4) {
-        var table = document.getElementById("mainTable");
-        var row = table.insertRow(-1);
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        var cell3 = row.insertCell(2);
-        var cell4 = row.insertCell(3);
+}
 
-        cell1.innerHTML = data1
-        cell2.innerHTML = data2
-        cell3.innerHTML = data3
-        cell4.innerHTML = data4
-        cell1.className = "top mediumhoverbox"
-        cell2.className = "top mediumhoverbox"
-        cell3.className = "top mediumhoverbox"
-        cell4.className = "top mediumhoverbox"
-    }
+function AddTableRow(data1, data2, data3, data4) {
+    var table = document.getElementById("mainTable");
+    var row = table.insertRow(-1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    var cell4 = row.insertCell(3);
 
-     function saveRowToLocalStorage(data1, data2, data3, data4) {
-        const savedRows = JSON.parse(localStorage.getItem("savedTableRows")) || [];
-        savedRows.push([data1, data2, data3, data4]);
-        localStorage.setItem("savedTableRows", JSON.stringify(savedRows));
-    }
+    cell1.innerHTML = data1;
+    cell2.innerHTML = data2;
+    cell3.innerHTML = data3;
+    cell4.innerHTML = data4;
+    cell1.className = "top mediumhoverbox";
+    cell2.className = "top mediumhoverbox";
+    cell3.className = "top mediumhoverbox";
+    cell4.className = "top mediumhoverbox";
+}
+
+function saveRowToLocalStorage(data1, data2, data3, data4) {
+    const savedRows = JSON.parse(localStorage.getItem("savedTableRows")) || [];
+    savedRows.push([data1, data2, data3, data4]);
+    localStorage.setItem("savedTableRows", JSON.stringify(savedRows));
+}
 </script>
 <style>
     
