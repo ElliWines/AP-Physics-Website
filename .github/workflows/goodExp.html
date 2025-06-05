@@ -1,7 +1,7 @@
 <html>
 
 <script>
-    let videos = [];
+let videos = [];
 
 if (localStorage.getItem("Videos") !== null) {
     videos = JSON.parse(localStorage.getItem("Videos"));
@@ -66,6 +66,7 @@ function saveRowToLocalStorage(data1, data2, data3, data4) {
     savedRows.push([data1, data2, data3, data4]);
     localStorage.setItem("savedTableRows", JSON.stringify(savedRows));
 }
+//localStorage.clear();
 </script>
 <style>
     
